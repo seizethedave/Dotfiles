@@ -1,5 +1,3 @@
-set wrap!
-set textwidth=79
 set expandtab
 set tabstop=3
 set shiftwidth=3
@@ -7,11 +5,10 @@ set autoindent
 set number
 set hlsearch
 set incsearch
-set t_Co=256
 set background=dark
 syntax on
 
-set term=xterm
+"set term=xterm
 set autoindent
 
 set ruler
@@ -41,7 +38,6 @@ NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'jmcantrell/vim-virtualenv'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'ntpeters/vim-better-whitespace'
 
 NeoBundle 'bling/vim-airline'
