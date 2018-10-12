@@ -14,6 +14,7 @@ set autoindent
 set ruler
 set showcmd
 set showmode
+set backspace=indent,eol,start
 "set nocompatible
 
 "dein Scripts-----------------------------
@@ -22,15 +23,21 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/dgrant/.dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-if dein#load_state('/Users/dgrant/.dein')
-  call dein#begin('/Users/dgrant/.dein')
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/Users/dgrant/.dein/repos/github.com/Shougo/dein.vim')
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+
+
+  call dein#add('~/.cache/dein')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -42,7 +49,7 @@ if dein#load_state('/Users/dgrant/.dein')
   call dein#add('jmcantrell/vim-virtualenv')
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('bling/vim-airline')
-  let g:airline_theme='powerlineish'
+  "let g:airline_theme='powerlineish'
   let g:airline_left_sep=''
   let g:airline_right_sep=''
   let g:airline_section_z=''
@@ -60,9 +67,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
